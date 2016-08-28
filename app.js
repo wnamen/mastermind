@@ -1,8 +1,29 @@
 var key = [];
+var current_guess = [];
+var maxTurns = 10;
+var current_turn = 0;
+
 
 
 
 function Game() {
+
+
+}
+
+function play (){
+
+  while (current_turn < 10) {
+    current_guess = newGuess();
+
+    if (hasWon(key, current_guess)) {
+      return celebration();
+    } else {
+      reveiwMatch(key, current_guess);
+    }
+
+    current_turn += 1;
+  }
 
 
 }
@@ -16,6 +37,7 @@ function init(){
   var newPlayer = new Player();
   var newGame = new Game();
 
+  key = generateKey();
 
 }
 
@@ -39,19 +61,18 @@ $(document).on("ready", function(event) {
 
       i++;
     }
-
     return key;
+  }
+
+  function newGuess() {
+
   }
 
 
   function hasWon(key, current_guess) {
-
     if (key.join("") === current_guess.join("")) {
-      return celebration()
-    } else {
-      return reveiwMatch(key, current_guess);
+      return true;
     }
-
   }
 
   //   each peg color will have a number assigned to it (1-8);
@@ -122,6 +143,8 @@ $(document).on("ready", function(event) {
 
     function reset(){
       key = [];
+      current_guess = [];
+      current_turn = 0;
     }
 
 
