@@ -19,9 +19,6 @@ Location: SF
 
 ### Data Structures for "Memory" (Independent Practice)
 
-**Pegs**
-
-
 **Key**
   - `answer` (string)
   - `genKey()` (Function - create a key)
@@ -29,7 +26,6 @@ Location: SF
 
 **Player**
   - `name` (Card)
-
   - `score` (string)
 
 **Board**
@@ -39,11 +35,11 @@ Location: SF
 **Game**
   - `init()` (Function - start game and set board)
   - `current_guess` (array of selections)
-  - `check()` (Function - eventListener for key will move the vehicle across the track)
   - `pegs` ([Peg])
-  - `reset()` (Function - resets the game!)
   - `hasWon()` (Function - check if the game has been won!)
+  - `reveiwMatch()` (Function - check to see if there are mismatches)
   - `celebrate()` (Function - display a win message)
+  - `reset()` (Function - resets the game!)
 </details>
 
 ### Development Stories

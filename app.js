@@ -13,7 +13,8 @@ function Player(name, score) {
 }
 
 function init(){
-
+  var newPlayer = new Player();
+  var newGame = new Game();
 
 
 }
