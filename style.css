@@ -3,30 +3,86 @@ body {
 }
 
 #container {
+  margin: 0 auto;
   background-color: green;
+  width: 400px;
 }
 
-#rows {
+#guess-board {
+  display: inline;
   float: left;
-  display: block;
-
 }
 
-
-.row {
+.guess-row {
   border: 2px solid black;
   paddding: 10px;
   margin: 10px;
+  margin-left: 100px;
   height: 50px;
-  width: 50%;
+  width: auto;
+  background-color: yellow;
+}
+
+.guess {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  display: inline-block;
+  background-color: white;
+  margin: 2px;
+  border: 2px solid black;
 }
 
 #result-board {
-  background-color: pink;
+display: inline;
+float: right;
+}
+
+.result-row {
   border: 2px solid black;
   paddding: 10px;
   margin: 10px;
   height: 50px;
-  width: 50%;
-  clear: left;
+  width: 50px;
+  background-color: pink;
+}
+
+.result {
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  background-color: white;
+  margin: 2px;
+  border: 2px solid black;
+}
+
+#select-form {
+  margin: 50px 50px;
+  height: 50px;
+  clear:both;
+}
+
+#red-btn {
+  background-color: red;
+}
+
+#orange-btn {
+  background-color: orange;
+}
+
+#yellow-btn {
+  background-color: yellow;
+}
+
+#green-btn {
+  background-color: green;
+}
+
+#blue-btn {
+  background-color: blue;
+}
+
+#purple-btn {
+  background-color: purple;
 }
