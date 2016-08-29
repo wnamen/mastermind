@@ -82,6 +82,7 @@ function newGuess(event) {
   }
 
   displayGuess();
+  displayResults();
 
   current_turn += 1;
 
@@ -103,7 +104,7 @@ function displayResults(){
   var resultIndex = -1 * current_turn;
 
   $(".result-row").eq(resultIndex).children().each(function(index) {
-    $(this).css("background-color", pegs[results[index]]);
+    $(this).css("background-color", resultPegs[results[index]]);
   })
 }
 
@@ -150,18 +151,32 @@ function hasWon(key, current_guess) {
 function reviewMatch(key, current_guess) {
 
   results = [];
+  var keyCopy = key.slice();
+  var guessCopy = current_guess.slice();
 
-  for (var i = 0; i < key.length; i++) {
-    temp = current_guess.indexOf(key[i]);
+  for (var i = 0; i < keyCopy.length; i++) {
+    var temp = keyCopy.indexOf(parseInt(guessCopy[i]));
 
     if ((temp !== -1)&&(temp === i)) {
       results.push(1);
-    } else if ((temp !== -1) &&(temp !== i)) {
-      results.push(0);
+      keyCopy.splice(temp, 1);
+      guessCopy.splice(i, 1);
+      i--;
     }
   }
 
-  displayResults(results);
+  for (var i = 0; i < keyCopy.length; i++) {
+    var temp = keyCopy.indexOf(parseInt(guessCopy[i]));
+
+    if ((temp !== -1)&&(temp !== i)) {
+      results.push(0);
+      keyCopy.splice(temp, 1);
+      guessCopy.splice(i, 1);
+      i--;
+    }
+  }
+
+  return results.sort().reverse();
 }
 
 
@@ -183,7 +198,8 @@ function celebration() {
 function reset(){
   key = [];
   current_guess = [];
-  current_turn = 0;
+  results = [];
+  current_turn = 1;
 }
 
 
