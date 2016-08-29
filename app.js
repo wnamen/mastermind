@@ -1,7 +1,23 @@
 var key = [];
 var current_guess = [];
+var results = [];
+
 var maxTurns = 10;
-var current_turn = 0;
+var current_turn = 1;
+
+var pegs = {
+  0: "red",
+  1: "orange",
+  2: "yellow",
+  3: "green",
+  4: "blue",
+  5: "purple"
+}
+
+var resultPegs = {
+  0: "red",
+  1: "black"
+}
 
 function generateBoard () {
   for (var i = 0; i < maxTurns; i++) {
@@ -23,28 +39,20 @@ function generateBoard () {
 }
 
 
-function Player(name, score) {
-  this.name = name;
-  this.score = score;
-}
+// function Player(name, score) {
+//   this.name = name;
+//   this.score = score;
+// }
+//
+// function init(){
+//
+//   var newPlayer = new Player();
+//   var newGame = new Game();
+//
+//   key = generateKey();
+//
+// }
 
-function init(){
-
-  var newPlayer = new Player();
-  var newGame = new Game();
-
-  key = generateKey();
-
-}
-
-var pegs = {
-  red: 0,
-  orange: 1,
-  yellow: 2,
-  green: 3,
-  blue: 4,
-  purple: 5,
-}
 
 
 function generateKey() {
@@ -59,21 +67,49 @@ function generateKey() {
 }
 
 function newGuess(event) {
-
   event.preventDefault();
+
+  current_guess = [];
 
   $("select").each(function () {
     current_guess.push($(this).val());
   })
 
-  return current_guess;
+  if (hasWon(key, current_guess)) {
+    celebration();
+  } else {
+    reviewMatch(key, current_guess);
+  }
+
+  displayGuess();
+
+  current_turn += 1;
+
+  if (current_turn >= 10) {
+    console.log("Game over")
+    reset();
+  }
+}
+
+function displayGuess(){
+  var guessIndex = -1 * current_turn;
+
+  $(".guess-row").eq(guessIndex).children().each(function(index) {
+    $(this).css("background-color", pegs[current_guess[index]]);
+  })
+}
+
+function displayResults(){
+  var resultIndex = -1 * current_turn;
+
+  $(".result-row").eq(resultIndex).children().each(function(index) {
+    $(this).css("background-color", pegs[results[index]]);
+  })
 }
 
 
 function hasWon(key, current_guess) {
-  if (key.join("") === current_guess.join("")) {
-    return true;
-  }
+  return key.join("") === current_guess.join("")
 }
 
 //   each peg color will have a number assigned to it (1-8);
@@ -113,19 +149,21 @@ function hasWon(key, current_guess) {
 
 function reviewMatch(key, current_guess) {
 
-  var matches = 0;
-  var wrongPos = 0;
+  results = [];
 
   for (var i = 0; i < key.length; i++) {
     temp = current_guess.indexOf(key[i]);
 
     if ((temp !== -1)&&(temp === i)) {
-      matches += 1;
-    } else if ((temp !== -1) &&(temp !== i))
-    wrongPos += 1;
+      results.push(1);
+    } else if ((temp !== -1) &&(temp !== i)) {
+      results.push(0);
+    }
   }
 
+  displayResults(results);
 }
+
 
 // run a for loop through the guess and check key index at each var against it.
 // if it returns -1
@@ -149,24 +187,9 @@ function reset(){
 }
 
 
-function play (){
-
-  while (current_turn < 10) {
-
-    $("form").submit(newGuess);
-
-    if (hasWon(key, current_guess)) {
-      return celebration();
-    } else {
-      reviewMatch(key, current_guess);
-    }
-
-    current_turn += 1;
-  }
-}
-
 $(document).on("ready", function() {
   generateBoard();
-  play();
+  generateKey();
+  $("form").submit(newGuess);
 
 });
