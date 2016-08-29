@@ -1,11 +1,35 @@
 body {
   text-align: center;
+  background-color: #83ff9d;
+  font-family: 'Ropa Sans';
+}
+
+#left-explanation {
+  float: left;
+  display: block;
+  margin-left: 250px;
+  width: 300px;
+  text-align: left;
+}
+
+#right-explanation {
+  float: right;
+  display: block;
+  margin-right: 250px;
+  width: 300px;
+  text-align: left;
 }
 
 #container {
   margin: 0 auto;
-  background-color: green;
+  background-color: #fff2c7;
   width: 400px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+h3 {
+  text-align: center;
 }
 
 #guess-board {
@@ -16,12 +40,13 @@ body {
 
 .guess-row {
   border: 2px solid black;
+  border-radius: 5px;
   paddding: 10px;
   margin: 10px;
   margin-left: 62px;
   height: 50px;
   width: auto;
-  background-color: yellow;
+  background-color: #83ff9d;
 }
 
 .guess {
@@ -43,11 +68,12 @@ body {
 
 .result-row {
   border: 2px solid black;
+  border-radius: 5px;
   paddding: 10px;
   margin: 10px;
   height: 50px;
   width: 50px;
-  background-color: pink;
+  background-color: #83ff9d;
 }
 
 .result {
@@ -70,26 +96,41 @@ body {
 
 }
 
-#red-btn {
+select, input {
+  background-color: #83ff9d;
+  border-color: black;
+  border-radius: 5px;
+  font-family: 'Ropa Sans';
+}
+
+.opt-red {
   background-color: red;
 }
 
-#orange-btn {
+.opt-orange {
   background-color: orange;
 }
 
-#yellow-btn {
+.opt-yellow {
   background-color: yellow;
 }
 
-#green-btn {
+.opt-green {
   background-color: green;
 }
 
-#blue-btn {
+.opt-blue {
   background-color: blue;
 }
 
-#purple-btn {
+.opt-purple {
   background-color: purple;
+}
+
+#reset-btn {
+  margin-bottom: 30px;
+  background-color: #83ff9d;
+  border-color: black;
+  border-radius: 5px;
+  font-family: 'Ropa Sans';
 }

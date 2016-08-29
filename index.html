@@ -5,6 +5,7 @@
     <title>Mastermind</title>
 
     <!-- Custom CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
 
     <!-- jQuery -->
@@ -24,6 +25,36 @@
 
     <div></div>
 
+    <div id="left-explanation">
+      <h3>Object of the Game</h3>
+
+      <p>The object of MASTERMIND (r) is to guess a secret code consisting of a series of 4 colored pegs. Each guest results in feedback narrowing down the possibilities of the code. The winner is the player who solves his opponent's secret code with fewer guesses.</p>
+
+    </div>
+
+    <div id="right-explanation">
+
+      <h3>How to Play</h3>
+
+      <p>The play of the game goes as follows:<br>
+        <br>1) The computer, known as the Codemaker, secretly places the 4 Code Pegs in the 4
+        holes, which are hidden from the opponent's sight. The Codemaker can use any combination of the 6 colors he
+        chooses. He can also use 2 or more Code Pegs of the same color if he wishes.<br>
+        <br>2) The player, known as the Codebreaker, sits opposite the Codemaker and
+        places Code Pegs in the 1st row of the Code Peg holes (closest to him). The
+        Codebreaker is attempting to duplicate the exact colors and positions of the secret
+        code.
+        3) The Codemaker responds by placing 0, 1, 2, 3, or 4 Key Pegs in the Key Peg holes
+        on the 1st row as follows:
+
+        <p>(b) A black Key Peg to indicate a Code Peg of the right color and in the right position
+          (without indication of which Code Peg it corresponds to).<br><br>(b) A red Key Peg to indicate a Code Peg of the right color but in the wrong position.<br><br>(b) No Key Peg to indicate a wrong color that does not appear in the secret code.</p>
+
+        <p>There is nothing about the placement of the Key Pegs to indicate which particular Code
+          Pegs are meant. It is part of the challenge of the game for the Codebreaker to figure out
+          which Code Pegs correspond to particular Key Pegs. </p>
+    </div>
+
     <div id="container">
 
       <section id="guess-board">
@@ -32,47 +63,52 @@
       <section id="result-board">
       </section>
 
-    <div id="select-board">
 
-      <form id="select-form">
-        <select name="option-1">
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-          <option value="5">Purple</option>
-        </select>
+      <div id="select-board">
 
-        <select name="option-2">
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-          <option value="5">Purple</option>
-        </select>
+        <form id="select-form">
+          <select name="option-1">
+            <option class="opt-red" value="0">Red</option>
+            <option class="opt-orange" value="1">Orange</option>
+            <option class="opt-yellow" value="2">Yellow</option>
+            <option class="opt-green" value="3">Green</option>
+            <option class="opt-blue" value="4">Blue</option>
+            <option class="opt-purple" value="5">Purple</option>
+          </select>
 
-        <select name="option-3">
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-          <option value="5">Purple</option>
-        </select>
+          <select name="option-2">
+            <option class="opt-red" value="0">Red</option>
+            <option class="opt-orange" value="1">Orange</option>
+            <option class="opt-yellow" value="2">Yellow</option>
+            <option class="opt-green" value="3">Green</option>
+            <option class="opt-blue" value="4">Blue</option>
+            <option class="opt-purple" value="5">Purple</option>
+          </select>
 
-        <select name="option-4">
-          <option value="0">Red</option>
-          <option value="1">Orange</option>
-          <option value="2">Yellow</option>
-          <option value="3">Green</option>
-          <option value="4">Blue</option>
-          <option value="5">Purple</option>
-        </select>
+          <select name="option-3">
+            <option class="opt-red" value="0">Red</option>
+            <option class="opt-orange" value="1">Orange</option>
+            <option class="opt-yellow" value="2">Yellow</option>
+            <option class="opt-green" value="3">Green</option>
+            <option class="opt-blue" value="4">Blue</option>
+            <option class="opt-purple" value="5">Purple</option>
+          </select>
 
-        <input type="submit">
-      </form>
+          <select name="option-4">
+            <option class="opt-red" value="0">Red</option>
+            <option class="opt-orange" value="1">Orange</option>
+            <option class="opt-yellow" value="2">Yellow</option>
+            <option class="opt-green" value="3">Green</option>
+            <option class="opt-blue" value="4">Blue</option>
+            <option class="opt-purple" value="5">Purple</option>
+          </select>
+
+          <input type="submit">
+        </form>
+
+      </div>
+
+      <button id="reset-btn">Reset</button>
 
     </div>
 

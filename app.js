@@ -77,6 +77,7 @@ function newGuess(event) {
 
   if (hasWon(key, current_guess)) {
     celebration();
+    reset();
   } else {
     reviewMatch(key, current_guess);
   }
@@ -87,7 +88,7 @@ function newGuess(event) {
   current_turn += 1;
 
   if (current_turn >= 10) {
-    console.log("Game over")
+    alert("Game over");
     reset();
   }
 }
@@ -192,7 +193,7 @@ function reviewMatch(key, current_guess) {
 // return vars
 
 function celebration() {
-  console.log("Congratulations! You guessed sequence correctly!")
+  alert("Congratulations! You guessed sequence correctly!")
 }
 
 function reset(){
@@ -200,6 +201,12 @@ function reset(){
   current_guess = [];
   results = [];
   current_turn = 1;
+
+  $("#guess-board").empty();
+  $("#result-board").empty();
+
+  generateBoard();
+  generateKey();
 }
 
 
@@ -207,5 +214,7 @@ $(document).on("ready", function() {
   generateBoard();
   generateKey();
   $("form").submit(newGuess);
+
+  $("#reset-btn").click(reset);
 
 });
