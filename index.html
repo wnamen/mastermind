@@ -30,7 +30,13 @@
 
       <p>The object of MASTERMIND (r) is to guess a secret code consisting of a series of 4 colored pegs. Each guest results in feedback narrowing down the possibilities of the code. The winner is the player who solves his opponent's secret code with fewer guesses.</p>
 
+        <h3 id="score-title">Your Score</h3>
+        <div id="score-board">
+          <div id="score">0
+          </div>
+        </div>
     </div>
+
 
     <div id="right-explanation">
 
@@ -103,12 +109,14 @@
             <option class="opt-purple" value="5">Purple</option>
           </select>
 
-          <input type="submit">
+          <div #id="buttons">
+            <button id="reset-btn">Give Up</button>
+            <input type="submit">
+          </div>
         </form>
 
       </div>
 
-      <button id="reset-btn">Reset</button>
 
     </div>
 

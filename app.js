@@ -5,6 +5,8 @@ var results = [];
 var maxTurns = 10;
 var current_turn = 1;
 
+var score = 0;
+
 var pegs = {
   0: "red",
   1: "orange",
@@ -38,23 +40,6 @@ function generateBoard () {
 
 }
 
-
-// function Player(name, score) {
-//   this.name = name;
-//   this.score = score;
-// }
-//
-// function init(){
-//
-//   var newPlayer = new Player();
-//   var newGame = new Game();
-//
-//   key = generateKey();
-//
-// }
-
-
-
 function generateKey() {
   i = 0;
   while (i < 4) {
@@ -76,8 +61,9 @@ function newGuess(event) {
   })
 
   if (hasWon(key, current_guess)) {
+    newScore();
     celebration();
-    reset();
+    return reset();
   } else {
     reviewMatch(key, current_guess);
   }
@@ -87,7 +73,7 @@ function newGuess(event) {
 
   current_turn += 1;
 
-  if (current_turn >= 10) {
+  if (current_turn > 10) {
     alert("Game over");
     reset();
   }
@@ -192,6 +178,11 @@ function reviewMatch(key, current_guess) {
 //
 // return vars
 
+function newScore(){
+  score += 1;
+  $("#score").html(score);
+}
+
 function celebration() {
   alert("Congratulations! You guessed sequence correctly!")
 }
@@ -213,6 +204,7 @@ function reset(){
 $(document).on("ready", function() {
   generateBoard();
   generateKey();
+
   $("form").submit(newGuess);
 
   $("#reset-btn").click(reset);
