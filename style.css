@@ -12,7 +12,7 @@ h1 {
   display: block;
   margin-left: 250px;
   width: 300px;
-  text-align: left;
+  text-align: justify;;
 }
 
 #score-title {
@@ -46,7 +46,7 @@ h1 {
   display: block;
   margin-right: 250px;
   width: 300px;
-  text-align: left;
+  text-align: justify;;
 }
 
 #container {
@@ -129,6 +129,7 @@ h3 {
   height: 100px;
   clear:both;
   margin-bottom: 20px;
+  display: inline-table;
 }
 
 
@@ -148,7 +149,9 @@ input {
   border-width: 2px;
   border-style: outset;
   box-shadow: 0 0 5px;
-  padding: 7px 7px;
+  padding: 7px 9px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .opt-red {
@@ -176,7 +179,6 @@ input {
 }
 
 #reset-btn {
-  margin-bottom: 30px;
   background-color: #83ff9d;
   border-color: black;
   border-radius: 5px;
