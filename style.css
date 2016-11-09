@@ -8,24 +8,17 @@ h1 {
 }
 
 #left-explanation {
-  float: left;
-  display: block;
-  margin-left: 250px;
-  width: 300px;
-  text-align: justify;;
+  text-align: justify;
 }
 
 #score-title {
-  margin-top: 180px;
-  margin-left: 5px;
   text-align: center;
 }
 
 #score-board {
   display: block;
-  margin-left: 100px;
-  height: 100px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   text-align: left;
   background-color: #fff2c7;
   border: 2px solid black;
@@ -36,23 +29,17 @@ h1 {
 }
 
 #score {
-  font-size: 3em;
+  font-size: 2em;
   text-align: center;
-  margin-top: 25px;
 }
 
 #right-explanation {
-  float: right;
-  display: block;
-  margin-right: 250px;
-  width: 300px;
-  text-align: justify;;
+  text-align: justify;
 }
 
 #container {
   margin: 0 auto;
   background-color: #fff2c7;
-  width: 400px;
   border: 2px solid black;
   border-radius: 5px;
   border-style: outset;
@@ -66,18 +53,13 @@ h3 {
 
 #guess-board {
   display: inline;
-  float: left;
-  margin-top: 30px;
-  margin-bottom: 10px;
 }
 
 .guess-row {
   border: 2px solid black;
   border-radius: 5px;
-  paddding: 10px;
-  margin: 10px;
-  margin-left: 44px;
-  height: 50px;
+  padding: 5px 0 0 0;
+  margin: 10px 0;
   width: auto;
   background-color: #83ff9d;
   box-shadow: 0 0 5px;
@@ -85,11 +67,11 @@ h3 {
 
 .guess {
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 20px;
+  width: 20px;
   display: inline-block;
   background-color: white;
-  margin: 8px;
+  margin: 0 8px;
   border: 2px solid black;
   border-style: outset;
   border-width: 2px;
@@ -98,18 +80,14 @@ h3 {
 
 #result-board {
   display: inline;
-  float: right;
-  margin-right: 35px;
-  margin-top: 30px;
 }
 
 .result-row {
   border: 2px solid black;
   border-radius: 5px;
-  paddding: 10px;
-  margin: 10px;
-  height: 50px;
-  width: 50px;
+  padding: 5px 0 0 0;
+  margin: 10px 0 10px 0;
+  height: 37px;
   background-color: #83ff9d;
   box-shadow: 0 0 5px;
 }
@@ -120,14 +98,13 @@ h3 {
   width: 15px;
   display: inline-block;
   background-color: white;
-  margin: 2px;
+  margin: 0 2px;
   border: 2px solid black;
   box-shadow: 1px 1px;
 }
 
 #select-board {
   height: 100px;
-  clear:both;
   margin-bottom: 20px;
   display: inline-table;
 }
@@ -141,8 +118,7 @@ select, input {
   box-shadow: 0 0 5px;
   border-style: outset;
   border-width: 1px;
-  padding: 7px 3px;
-  margin: 5px;
+  margin: 5px 0 0 0;
 }
 
 input {
@@ -151,7 +127,7 @@ input {
   box-shadow: 0 0 5px;
   padding: 7px 9px;
   margin-top: 10px;
-  margin-bottom: 10px;
+  border-radius: 5px;
 }
 
 .opt-red {
@@ -181,7 +157,6 @@ input {
 #reset-btn {
   background-color: #83ff9d;
   border-color: black;
-  border-radius: 5px;
   font-family: 'Ropa Sans';
   border-width: 2px;
   border-style: outset;

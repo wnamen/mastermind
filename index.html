@@ -6,6 +6,7 @@
 
     <!-- Custom CSS -->
     <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="foundation.css">
 		<link rel="stylesheet" href="style.css">
 
     <!-- jQuery -->
@@ -23,51 +24,28 @@
       <h1>Mastermind</h1>
     </header>
 
-    <div></div>
-
-    <div id="left-explanation">
+  <!-- <div class="row"> -->
+    <div id="left-explanation" class="large-4 columns">
       <h3>Object of the Game</h3>
 
       <p>The object of MASTERMIND (r) is to guess a secret code consisting of a series of 4 colored pegs. Each guest results in feedback narrowing down the possibilities of the code. The winner is the player who solves his opponent's secret code with fewer guesses.</p>
 
-        <h3 id="score-title">Your Score</h3>
-        <div id="score-board">
-          <div id="score">0
-          </div>
-        </div>
+      <h3 id="score-title">Your Score</h3>
+      <div id="score-board" class="row">
+        <div id="score">0</div>
+      </div>
+      <br>
     </div>
 
+    <div id="container" class="large-4 small-12 columns">
 
-    <div id="right-explanation">
+      <div class="row">
+        <section id="guess-board" class="medium-8 small-8 columns">
+        </section>
 
-      <h3>How to Play</h3>
-
-      <p>The play of the game goes as follows:<br>
-        <br>1) The computer, known as the Codemaker, secretly places the 4 Code Pegs in the 4
-        holes, which are hidden from the opponent's sight. The Codemaker can use any combination of the 6 colors he
-        chooses. He can also use 2 or more Code Pegs of the same color if he wishes.<br>
-        <br>2) The player, known as the Codebreaker, sits opposite the Codemaker and
-        places Code Pegs in the 1st row of the Code Peg holes (closest to him). The
-        Codebreaker is attempting to duplicate the exact colors and positions of the secret
-        code.
-        3) The Codemaker responds by placing 0, 1, 2, 3, or 4 Key Pegs in the Key Peg holes
-        on the 1st row as follows:
-
-        <p>(b) A black Key Peg to indicate a Code Peg of the right color and in the right position
-          (without indication of which Code Peg it corresponds to).<br><br>(b) A red Key Peg to indicate a Code Peg of the right color but in the wrong position.<br><br>(b) No Key Peg to indicate a wrong color that does not appear in the secret code.</p>
-
-        <p>There is nothing about the placement of the Key Pegs to indicate which particular Code
-          Pegs are meant. It is part of the challenge of the game for the Codebreaker to figure out
-          which Code Pegs correspond to particular Key Pegs. </p>
-    </div>
-
-    <div id="container">
-
-      <section id="guess-board">
-      </section>
-
-      <section id="result-board">
-      </section>
+        <section id="result-board" class="medium-4 small-2 columns">
+        </section>
+      </div>
 
 
       <div id="select-board">
@@ -113,13 +91,40 @@
           </div>
 
           <input type="submit">
-        </form>
+          <button id="reset-btn">Give Up</button>
 
-        <button id="reset-btn">Give Up</button>
-      </div>
+        </form>
 
 
     </div>
+
+
+    </div>
+
+    <div id="right-explanation" class="large-4 columns">
+
+      <h3>How to Play</h3>
+
+      <p>The play of the game goes as follows:<br>
+        <br>1) The computer, known as the Codemaker, secretly places the 4 Code Pegs in the 4
+        holes, which are hidden from the opponent's sight. The Codemaker can use any combination of the 6 colors he
+        chooses. He can also use 2 or more Code Pegs of the same color if he wishes.<br>
+        <br>2) The player, known as the Codebreaker, sits opposite the Codemaker and
+        places Code Pegs in the 1st row of the Code Peg holes (closest to him). The
+        Codebreaker is attempting to duplicate the exact colors and positions of the secret
+        code.
+        3) The Codemaker responds by placing 0, 1, 2, 3, or 4 Key Pegs in the Key Peg holes
+        on the 1st row as follows:
+
+        <p>(b) A black Key Peg to indicate a Code Peg of the right color and in the right position
+          (without indication of which Code Peg it corresponds to).<br><br>(b) A red Key Peg to indicate a Code Peg of the right color but in the wrong position.<br><br>(b) No Key Peg to indicate a wrong color that does not appear in the secret code.</p>
+
+        <p>There is nothing about the placement of the Key Pegs to indicate which particular Code
+          Pegs are meant. It is part of the challenge of the game for the Codebreaker to figure out
+          which Code Pegs correspond to particular Key Pegs. </p>
+    </div>
+  <!-- </div> -->
+
 
   </body>
 </html>
